@@ -1,0 +1,44 @@
+{
+  "name": "WaitlistPreference",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to PatientProfile"
+    },
+    "service_id": {
+      "type": "string",
+      "description": "Reference to Service"
+    },
+    "doctor_id": {
+      "type": "string",
+      "description": "Preferred doctor (optional)"
+    },
+    "preferred_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Specific date for availability alert"
+    },
+    "preferred_time_start": {
+      "type": "string",
+      "description": "Preferred start time (HH:MM)"
+    },
+    "preferred_time_end": {
+      "type": "string",
+      "description": "Preferred end time (HH:MM)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "notified_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "patient_id",
+    "service_id",
+    "preferred_date"
+  ]
+}
