@@ -1,0 +1,59 @@
+{
+  "name": "AppointmentSlot",
+  "type": "object",
+  "properties": {
+    "doctor_id": {
+      "type": "string",
+      "description": "Reference to StaffProfile"
+    },
+    "site_id": {
+      "type": "string",
+      "description": "Reference to Site"
+    },
+    "service_id": {
+      "type": "string",
+      "description": "Reference to Service"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Slot start time"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Slot end time"
+    },
+    "capacity": {
+      "type": "number",
+      "default": 1
+    },
+    "booked_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of bookings for this slot"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "OPEN",
+        "HELD",
+        "BOOKED",
+        "BLOCKED"
+      ],
+      "default": "OPEN"
+    },
+    "hold_until": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Temporary hold expiration"
+    }
+  },
+  "required": [
+    "doctor_id",
+    "site_id",
+    "service_id",
+    "start_time",
+    "end_time"
+  ]
+}
