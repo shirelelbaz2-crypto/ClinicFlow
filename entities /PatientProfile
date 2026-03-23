@@ -1,0 +1,65 @@
+{
+  "name": "PatientProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User entity"
+    },
+    "national_id": {
+      "type": "string",
+      "description": "Israeli ID number (9 digits)"
+    },
+    "first_name": {
+      "type": "string",
+      "description": "Patient first name"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Patient last name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Patient email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Patient phone number"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth"
+    },
+    "pregnancy_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "For pregnancy week calculation"
+    },
+    "preferred_language": {
+      "type": "string",
+      "enum": [
+        "he",
+        "ar",
+        "en",
+        "ru"
+      ],
+      "default": "he",
+      "description": "Preferred language"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "national_id",
+    "first_name",
+    "last_name",
+    "email"
+  ]
+}
