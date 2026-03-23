@@ -1,0 +1,26 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Service name"
+    },
+    "description": {
+      "type": "string"
+    },
+    "default_duration_min": {
+      "type": "number",
+      "default": 30,
+      "description": "Default appointment duration in minutes"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "default_duration_min"
+  ]
+}
