@@ -1,0 +1,60 @@
+{
+  "name": "Referral",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to PatientProfile"
+    },
+    "service_id": {
+      "type": "string",
+      "description": "Reference to Service"
+    },
+    "referring_doctor": {
+      "type": "string",
+      "description": "Name of referring doctor"
+    },
+    "referral_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "NEW",
+        "NOTIFIED_PATIENT",
+        "APPOINTMENT_SCHEDULED",
+        "EXPIRED"
+      ],
+      "default": "NEW"
+    },
+    "notified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reminder_sent_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "appointment_id": {
+      "type": "string",
+      "description": "Reference to scheduled appointment"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "Uploaded referral document"
+    }
+  },
+  "required": [
+    "patient_id",
+    "service_id",
+    "referral_date"
+  ]
+}
