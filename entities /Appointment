@@ -1,0 +1,82 @@
+{
+  "name": "Appointment",
+  "type": "object",
+  "properties": {
+    "slot_id": {
+      "type": "string",
+      "description": "Reference to AppointmentSlot"
+    },
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to PatientProfile"
+    },
+    "referral_id": {
+      "type": "string",
+      "description": "Reference to Referral"
+    },
+    "service_id": {
+      "type": "string",
+      "description": "Reference to Service"
+    },
+    "doctor_id": {
+      "type": "string",
+      "description": "Reference to StaffProfile (doctor)"
+    },
+    "site_id": {
+      "type": "string",
+      "description": "Reference to Site"
+    },
+    "appointment_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "CONFIRMED",
+        "CHECKED_IN",
+        "COMPLETED",
+        "CANCELLED",
+        "NO_SHOW"
+      ],
+      "default": "PENDING"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "REFERRAL",
+        "SELF_SERVICE",
+        "SECRETARY"
+      ],
+      "default": "SELF_SERVICE"
+    },
+    "attendance": {
+      "type": "string",
+      "enum": [
+        "ATTENDED",
+        "NOT_ATTENDED",
+        "UNKNOWN"
+      ],
+      "default": "UNKNOWN"
+    },
+    "check_in_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "cancelled_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cancellation_reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "patient_id",
+    "appointment_date"
+  ]
+}
