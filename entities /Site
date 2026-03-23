@@ -1,0 +1,27 @@
+{
+  "name": "Site",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Clinic/site name"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string",
+      "default": "Asia/Jerusalem"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
