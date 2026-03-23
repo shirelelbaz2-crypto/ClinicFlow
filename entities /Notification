@@ -1,0 +1,70 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User"
+    },
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to PatientProfile"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "EMAIL",
+        "SMS",
+        "PUSH"
+      ],
+      "default": "EMAIL"
+    },
+    "template_key": {
+      "type": "string",
+      "description": "Notification template identifier"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "he",
+        "ar",
+        "en",
+        "ru"
+      ],
+      "default": "he"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "QUEUED",
+        "SENT",
+        "FAILED"
+      ],
+      "default": "QUEUED"
+    },
+    "sent_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "related_referral_id": {
+      "type": "string"
+    },
+    "related_appointment_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "patient_id",
+    "type",
+    "template_key"
+  ]
+}
