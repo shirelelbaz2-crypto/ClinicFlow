@@ -1,0 +1,52 @@
+{
+  "name": "StaffProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User entity"
+    },
+    "national_id": {
+      "type": "string",
+      "description": "Staff ID number"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "staff_type": {
+      "type": "string",
+      "enum": [
+        "DOCTOR",
+        "SECRETARY"
+      ],
+      "description": "Type of staff member"
+    },
+    "specialty": {
+      "type": "string",
+      "description": "Doctor specialty (if applicable)"
+    },
+    "site_id": {
+      "type": "string",
+      "description": "Assigned site/clinic"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "national_id",
+    "first_name",
+    "last_name",
+    "staff_type"
+  ]
+}
